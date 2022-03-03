@@ -16,9 +16,10 @@ const Content = styled.div(tw`
 
 export default function StatusPage() {
 	return (
-		<Layout.Default>
+		<Layout.Default seo={{ title: 'Krishna ─ status' }}>
 			<Container>
 				<Content>
+					<title>What am I upto?</title>
 					<Status.Widget />
 				</Content>
 			</Container>
