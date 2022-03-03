@@ -6,18 +6,18 @@ import type { ComponentProps } from 'react';
 export function useSeoProps(): Partial<ComponentProps<typeof NextSeo>> {
 	const router = useRouter();
 
-	const title = 'nuro ─ developer';
+	const title = 'Krishna Kaipa';
 	const description = "Hey 👋 I'm Krishna, a developer";
 
 	return {
 		title,
 		description,
-		canonical: `https://nuro.dev/${router.asPath}`,
+		canonical: `https://kr1shna.me/${router.asPath}`,
 		openGraph: {
 			title,
 			description,
 			site_name: 'nuro',
-			url: `https://nuro.dev/${router.asPath}`,
+			url: `https://kr1shna.me/${router.asPath}`,
 			type: 'website',
 			images: [
 				{
@@ -30,8 +30,8 @@ export function useSeoProps(): Partial<ComponentProps<typeof NextSeo>> {
 		},
 		twitter: {
 			cardType: 'summary_large_image',
-			handle: '@nurodev',
-			site: '@nurodev',
+			handle: '@nkrishna_kaipa',
+			site: '@nkrishna_kaipa',
 		},
 	};
 }

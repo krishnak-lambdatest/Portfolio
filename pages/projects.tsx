@@ -28,7 +28,7 @@ const ProjectIcon = styled.span(tw`
 `);
 
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
-	const response = await fetch('https://api.github.com/users/nurodev/repos');
+	const response = await fetch('https://api.github.com/users/ra5put1n/repos');
 	const json = (await response.json()) as GitHubRepos;
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
@@ -41,9 +41,12 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => 
 			if (repo.archived) return null;
 
 			// Strip the emoji suffix from the repo description
+			console.log(repo.description)
 			const trimmedDescription = repo.description.split(' ');
 			trimmedDescription.shift();
 			const description = trimmedDescription.join(' ');
+
+			// const description = repo.description;
 
 			// Check if there is a matching blog post to attach
 			const repoPost =
@@ -82,7 +85,7 @@ export default function ProjectsPage({ projects: serialisedProjects }: ProjectPr
 	const projects = JSON.parse(serialisedProjects) as Projects;
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ projects' }}>
+		<Layout.Default seo={{ title: "Krishna's projects" }}>
 			<Container>
 				<Content>
 					<List.Container

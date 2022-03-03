@@ -22,7 +22,7 @@ export function ErrorLayout({ children, seo }: DefaultLayoutProps) {
 
 	const meta = {
 		...defaultSeoProps,
-		title: 'nuro ─ Whoops!',
+		title: 'Whoops!',
 		...seo,
 	};
 

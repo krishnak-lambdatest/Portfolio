@@ -18,7 +18,7 @@ export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>
 
 	return (
 		<>
-			<NextSeo {...defaultSeoProps} title={'nuro ─ blog ─ all'} {...seo} />
+			<NextSeo {...defaultSeoProps} title={"Krishna's blog ─ all"} {...seo} />
 			<Navbar.Standard />
 			<Main>{children}</Main>
 		</>

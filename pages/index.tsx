@@ -62,22 +62,28 @@ const ActionText = styled.span(tw`
 `);
 
 const ACTIONS: Array<NavigationItem> = [
-	{
-		type: NavigationItemType.LINK,
-		href: '/blog',
-		icon: <ActionIcon icon="feather:edit-3" />,
-		text: 'Blog',
-	},
+	// {
+	// 	type: NavigationItemType.LINK,
+	// 	href: '/blog',
+	// 	icon: <ActionIcon icon="feather:edit-3" />,
+	// 	text: 'Blog',
+	// },
 	{
 		type: NavigationItemType.LINK,
 		href: '/projects',
 		icon: <ActionIcon icon="feather:copy" />,
-		text: 'Projects',
+		text: 'Software Projects',
+	},
+	{
+		type: NavigationItemType.LINK,
+		href: '/research',
+		icon: <ActionIcon icon="feather:book" />,
+		text: 'Research projects',
 	},
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
+		href: 'https://github.com/ra5put1n',
 		icon: <ActionIcon icon="feather:github" />,
 		text: 'GitHub',
 	},

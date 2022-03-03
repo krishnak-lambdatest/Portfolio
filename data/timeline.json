@@ -1,60 +1,26 @@
 [
 	{
-		"date": "03-15-2021",
-		"title": "Started @ Attio",
-		"description": "Joined the Attio team",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Attio",
-			"url": "https://attio.com/"
-		}
+		"date": "09-29-2021",
+		"title": "Research collaborator",
+		"description": "Joined Utrecht University as a Research Collaborator at Utrecht, Netherlands",
+		"icon": "feather:briefcase"
 	},
 	{
-		"date": "11-16-2020",
-		"title": "Started @ Aiming.pro",
-		"description": "Joined the Aiming.pro team",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Aiming.pro",
-			"url": "https://aiming.pro/"
-		}
+		"date": "04-11-2021",
+		"title": "First research internship",
+		"description": "Began my first research internship at Coronavirus Visualization, Harvard University",
+		"icon": "feather:briefcase"
 	},
 	{
-		"date": "07-15-2020",
-		"title": "Graduated University!",
-		"description": "Successfully completed my Bachalors Degree",
-		"icon": "feather:award"
-	},
-	{
-		"date": "10-11-2018",
-		"title": "First Developer Role",
-		"description": "Began a internship as a junior developer working at Stink Studios",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Stink Studios",
-			"url": "https://stinkstudios.com/"
-		}
-	},
-	{
-		"date": "11-04-2016",
-		"title": "First Job!",
-		"description": "Began my first part-time job as a junior service desk analyist at CreeperHost",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit CreeperHost",
-			"url": "http://creeperhost.net/"
-		}
-	},
-	{
-		"date": "09-10-2016",
+		"date": "08-02-2019",
 		"title": "Start University",
-		"description": "Began studying Computer Games Programming at Staffordshire University",
+		"description": "Began studying Information technology at Indian Institute of Information Technology",
 		"icon": "feather:book"
 	},
 	{
-		"date": "08-09-1997",
+		"date": "09-19-2001",
 		"title": "Birthday!",
-		"description": "I was born the 9th of August 1997",
+		"description": "I was born on the 19th of September, 2001",
 		"icon": "feather:gift"
 	}
 ]
