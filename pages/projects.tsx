@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => 
 			if (repo.archived) return null;
 
 			// Strip the emoji suffix from the repo description
-			console.log(repo.description)
+			// console.log(repo.description)
 			const trimmedDescription = repo.description.split(' ');
 			trimmedDescription.shift();
 			const description = trimmedDescription.join(' ');
