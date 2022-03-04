@@ -7,7 +7,7 @@ import { Button, Event, Pill, Transition, Wave } from '~/components';
 import { EventType, NavigationItemType, WithChildren } from '~/types';
 import { Layout } from '~/layouts';
 import { usePersistantState } from '~/lib';
-
+import { Status } from '~/components';
 import type { NavigationItem } from '~/types';
 
 const Container = styled.div(tw`
@@ -18,6 +18,16 @@ const Container = styled.div(tw`
 const Content = styled.div(tw`
 	max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 \
 	text-center
+`);
+
+const Container1 = styled.div(tw`
+	flex flex-grow min-h-screen \
+	pt-16 pb-12
+`);
+
+const Content1 = styled.div(tw`
+	flex-grow flex flex-col justify-center max-w-sm sm:max-w-lg w-full \
+	mx-auto px-0 sm:px-16
 `);
 
 const Title = styled.h1(tw`

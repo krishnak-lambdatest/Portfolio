@@ -38,6 +38,15 @@ const Container = styled.div(tw`
 	transition ease-in-out duration-300
 `);
 
+const Container2 = styled.div(tw`
+	flex flex-col space-y-3	 w-full max-w-sm \
+	mx-auto px-0 py-0 \
+	bg-white bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 \
+	backdrop-filter backdrop-blur-sm \
+	rounded-lg hover:shadow-lg \
+	transition ease-in-out duration-300
+`);
+
 const ActivityContainer = styled.div(tw`
 	inline-flex items-center
 `);
@@ -60,6 +69,11 @@ const Body = styled.div(tw`
 
 const Title = styled.h1(tw`
 	text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis \
+	text-gray-900 dark:text-white
+`);
+
+const Title2 = styled.h1(tw`
+	text-base line-clamp-1 tracking-wide overflow-ellipsis opacity-75\
 	text-gray-900 dark:text-white
 `);
 
@@ -229,5 +243,142 @@ export function Widget() {
 				);
 			})}
 		</Container>
+	);
+}
+
+export function Widget2() {
+	const { color, loading, status } = useStatus();
+
+	if (loading) return <Loading />;
+
+	if (!status || !status) return <Error />;
+
+	const activities: Array<Activity> = [
+		/**
+		 * Discord User
+		 */
+		{
+			avatar: {
+				alt: 'Discord Avatar',
+				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`,
+			},
+			title: status.discord_user.username,
+			icon: (
+				<Status.Indicator
+					color={color}
+					pulse={status.discord_status !== DiscordStatus.OFFLINE}
+				/>
+			),
+		},
+
+		/**
+		 * Spotify
+		 */
+		...(status.spotify && status.listening_to_spotify
+			? [
+				{
+					avatar: {
+						alt: `${status.spotify.song} - ${status.spotify.artist}`,
+						href: `https://open.spotify.com/track/${status.spotify.track_id}`,
+						url: status.spotify.album_art_url,
+					},
+					title: status.spotify.song,
+					icon: 'feather:music',
+				},
+			]
+			: []),
+
+		/**
+		 * All other activities
+		 */
+		...(status.activities.length > 0
+			? status.activities.map((activity) => {
+				if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
+
+				const hasAsset = activity.assets && activity.assets.large_image ? true : false;
+				const avatar = hasAsset
+					? {
+						alt: activity.details,
+						url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
+					}
+					: {
+						alt: activity.name,
+						icon: true,
+						url: '',
+					};
+
+				return {
+					avatar,
+					title: activity.name,
+				};
+			})
+			: []),
+	].filter((item) => item !== null);
+
+	return (
+		<Container2>
+			{activities.map((activity, index) => {
+				return (
+					<Fragment key={index}>
+						<ActivityContainer>
+							{'icon' in activity.avatar ? (
+								<AssetContainer>
+									<UnknownActivityIcon icon="feather:help-circle" />
+								</AssetContainer>
+							) : activity.avatar.href ? (
+								<a
+									href={activity.avatar.href}
+									target="_blank"
+									rel="noreferrer noopener"
+								>
+									<AssetContainer>
+										<Asset
+											alt={activity.avatar.alt}
+											height={48}
+											src={activity.avatar.url}
+											width={48}
+										/>
+									</AssetContainer>
+								</a>
+							) : (
+								<AssetContainer>
+									<Asset
+										alt={activity.avatar.alt}
+										height={48}
+										src={activity.avatar.url}
+										width={48}
+									/>
+								</AssetContainer>
+							)}
+
+							<Body>
+								<Title2>{activity.title}</Title2>
+
+								{'icon' in activity.avatar && activity.avatar.icon ? (
+									<Description>Unknown Activity</Description>
+								) : Array.isArray(activity.description) ? (
+									activity.description.map((description, descriptionIndex) => (
+										<Description key={descriptionIndex}>
+											{description}
+										</Description>
+									))
+								) : (
+									<Description>{activity.description}</Description>
+								)}
+							</Body>
+
+							{activity.icon &&
+								(typeof activity.icon === 'string' ? (
+									<AnimatedIcon icon={activity.icon} />
+								) : (
+									activity.icon
+								))}
+						</ActivityContainer>
+
+						{index + 1 !== activities.length && <Divider />}
+					</Fragment>
+				);
+			})}
+		</Container2>
 	);
 }

@@ -86,12 +86,9 @@ export function useNavigation() {
 						{
 							type: NavigationItemType.LINK,
 							icon: (
-								<Status.Indicator
-									color={color}
-									pulse={status.discord_status !== DiscordStatus.OFFLINE}
-								/>
+								<Status.Widget2 />
 							),
-							text: 'Status',
+							text: '',
 							href: '/status',
 						} as NavigationItem,
 					],
