@@ -19,16 +19,16 @@ export function Standard() {
 	useEffect(() => {
 		const renderer = new Renderer({
 			depth: false,
-			dpr: 2,
-			alpha: true,
+			dpr: 4,
+			alpha: false,
 		});
 
 		const gl = renderer.gl;
 
 		const camera = new Camera(gl, {
-			fov: 15,
+			fov: 10,
 		});
-		camera.position.z = 15;
+		camera.position.z = 6;
 
 		function handleReisze() {
 			renderer.setSize(window.innerWidth, window.innerHeight);
@@ -44,7 +44,7 @@ export function Standard() {
 			handleReisze();
 		} catch (error) {}
 
-		const numParticles = 100;
+		const numParticles = 150;
 		const position = new Float32Array(numParticles * 3);
 		const random = new Float32Array(numParticles * 4);
 
@@ -88,8 +88,8 @@ export function Standard() {
 		function update(t) {
 			incrementAnimationId(requestAnimationFrame(update));
 
-			particles.rotation.z += 0.0025;
-			program.uniforms.uTime.value = t * 0.00025;
+			particles.rotation.z += 0.0015;
+			program.uniforms.uTime.value = t * 0.000025;
 
 			renderer.render({
 				scene: particles,
