@@ -50,6 +50,10 @@ const StyledPill = styled(Pill.Standard)(tw`
 	mt-4
 `);
 
+const StyledPill2 = styled(Pill.Standard2)(tw`
+	mt-3
+`);
+
 const Actions = styled.div`
 	${tw`
 		flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
@@ -117,13 +121,13 @@ export default function HomePage() {
 					{animations ? (
 						<Transition duration={1000}>
 							<Title>
-								Hey <Wave>👋</Wave> I'm Krishna, <LineBreak />a{' '}
+								Hey <Wave>👋</Wave> I'm <StyledPill2>Krishna</StyledPill2>, <LineBreak />a{' '}
 								<StyledPill>developer</StyledPill>
 							</Title>
 						</Transition>
 					) : (
 						<Title>
-							Hey <Wave>👋</Wave> I'm Krishna, <LineBreak />a{' '}
+							Hey <Wave>👋</Wave> I/m <StyledPill2>Krishna</StyledPill2>, <LineBreak />a{' '}
 							<StyledPill>developer</StyledPill>
 						</Title>
 					)}
