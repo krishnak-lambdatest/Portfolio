@@ -119,7 +119,7 @@ export function Widget() {
 				alt: 'Discord Avatar',
 				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`,
 			},
-			title: status.discord_user.username,
+			title: status.discord_user.username ,
 			description: `#${status.discord_user.discriminator}`,
 			icon: (
 				<Status.Indicator
