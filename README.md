@@ -1,5 +1,6 @@
 ## Personal Website
 
+Deployment status - [![Netlify Status](https://api.netlify.com/api/v1/badges/0987cc25-5679-4228-8ae8-162f46354056/deploy-status)](https://app.netlify.com/sites/priceless-lamport-f629a3/deploys)
 ## 🛠 Development
 
 Install dependencies
