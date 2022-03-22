@@ -28,12 +28,6 @@ interface Activity {
 	icon?: string | ReactNode;
 }
 
-interface Activity2 {
-	avatar: Avatar;
-	title: string;
-	icon?: string | ReactNode;
-}
-
 const Container = styled.div(tw`
 	flex flex-col space-y-5 w-full max-w-sm \
 	mx-auto px-4 py-4 \
@@ -259,7 +253,7 @@ export function Widget2() {
 
 	if (!status || !status) return <Error />;
 
-	const activities: Array<Activity2> = [
+	const activities: Array<Activity> = [
 		/**
 		 * Discord User
 		 */
@@ -360,17 +354,17 @@ export function Widget2() {
 							<Body>
 								<Title2>{activity.title}</Title2>
 
-								{/*{'icon' in activity.avatar && activity.avatar.icon ? (*/}
-								{/*	<Description>Unknown Activity</Description>*/}
-								{/*) : Array.isArray(activity.description) ? (*/}
-								{/*	activity.description.map((description, descriptionIndex) => (*/}
-								{/*		<Description key={descriptionIndex}>*/}
-								{/*			{description}*/}
-								{/*		</Description>*/}
-								{/*	))*/}
-								{/*) : (*/}
-								{/*	<Description>{activity.description}</Description>*/}
-								{/*)}*/}
+								{'icon' in activity.avatar && activity.avatar.icon ? (
+									<Description>Unknown Activity</Description>
+								) : Array.isArray(activity.description) ? (
+									activity.description.map((description, descriptionIndex) => (
+										<Description key={descriptionIndex}>
+											{description}
+										</Description>
+									))
+								) : (
+									<Description>{activity.description}</Description>
+								)}
 							</Body>
 
 							{activity.icon &&
