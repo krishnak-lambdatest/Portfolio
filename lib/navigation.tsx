@@ -46,6 +46,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Timeline',
 			href: '/timeline',
 		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:heart',
+			text: 'Eastside <3',
+			href: '/sania',
+		},
 	],
 	[
 		{
@@ -82,17 +88,17 @@ export function useNavigation() {
 		...staticMenuItems,
 		...(!loading && status && status.discord_status !== DiscordStatus.OFFLINE
 			? [
-					[
-						{
-							type: NavigationItemType.LINK,
-							icon: (
-								<Status.Widget2 />
-							),
-							text: '',
-							href: '/status',
-						} as NavigationItem,
-					],
-			  ]
+				[
+					{
+						type: NavigationItemType.LINK,
+						icon: (
+							<Status.Widget2 />
+						),
+						text: '',
+						href: '/status',
+					} as NavigationItem,
+				],
+			]
 			: []),
 	];
 

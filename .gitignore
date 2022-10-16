@@ -33,3 +33,7 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+#test pages
+/pages/test.tsx
+/data/test.json
