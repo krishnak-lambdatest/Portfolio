@@ -49,7 +49,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:heart',
-			text: 'Eastside <3',
+			text: 'Pakoda <3',
 			href: '/sania',
 		},
 	],

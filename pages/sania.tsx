@@ -118,12 +118,12 @@ export default function Sania() {
                     {animations ? (
                         <Transition duration={1000}>
                             <Title>
-                                Hello meri jaan ;)<LineBreak /><Wave>❤️</Wave> <LineBreak />I love you <StyledPill>Sania</StyledPill>
+                                Surprise incoming soon ;)<LineBreak /><Wave>❤️</Wave> <LineBreak />I love you <StyledPill>Pakoda ;)</StyledPill>
                             </Title>
                         </Transition>
                     ) : (
                         <Title>
-                            Hello meri jaan ;)<LineBreak /><Wave>❤️</Wave> <LineBreak />I love you<StyledPill>Sania</StyledPill>
+                            Surprise incoming soon ;)<LineBreak /><Wave>❤️</Wave> <LineBreak />I love you<StyledPill>Pakoda ;)</StyledPill>
                         </Title>
                     )}
                     {animations ? (
