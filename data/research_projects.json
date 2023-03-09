@@ -1,5 +1,21 @@
 [
   {
+    "date": "01-01-2023",
+    "title": "Detecting licensing conflicts in the worldwide software ecosystem",
+    "description": "Developed a tool on top of SearchSECO to detect license conflicts in OSS ecosystem.",
+    "icon": "feather:briefcase",
+    "link": {
+      "text": "SecureSECO research group",
+      "url": "https://secureseco.org/"
+    }
+  },
+  {
+    "date": "06-12-2022",
+    "title": "Anomaly Classification to Enable Self-Healing in Cyber Physical Systems using Process Mining",
+    "description": "Performing process optimisation using ensemble learning techniques from event log data.",
+    "icon": "feather:briefcase"
+  },
+  {
     "date": "02-01-2022",
     "title": "Threat and risk modelling for Industrial IoT Systems",
     "description": "Working on a quantitative threat modelling and risk assessment framework for Industrial IoT systems based on a novel risk scoring method.",

@@ -107,7 +107,7 @@ export default function HomePage() {
 	const age = differenceInYears(today, birthday);
 	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
 
-	const description = `I am a ${age} y/o researcher & Product Manager`;
+	const description = `I am a ${age} y/o Product Manager - Software Engineer - Researcher`;
 
 	return (
 		<Layout.Default>
